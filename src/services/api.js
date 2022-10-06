@@ -21,51 +21,22 @@ export const getMovieDetailes = async movieId => {
   return data;
 };
 
-// export async function getTrend() {
-//   const url = `${API_URL}/trending/movie/day?api_key=${API_KEY}`;
-//   const response = await fetch(`${url}`);
-//   // const database = await response.json();
-//   return response.json();
-//   // return database;
-// }
+export const getCast = async movieId => {
+  const { data } = await instance.get(`movie/${movieId}/credits`);
+  return data;
+};
 
-// async function getSearchMovies(query, page = 1) {
-//   const url = `${API_URL}/search/movie`;
-//   const filter = `?api_key=${API_KEY}&query=${query}&language=en-US&page=${page}&include_adult=false`;
-//   const response = await fetch(`${url}${filter}`);
-//   const database = await response.json();
+export const getReviews = async movieId => {
+  const { data } = await instance.get(`movie/${movieId}/reviews`);
+  return data;
+};
 
-//   return database;
-// }
-
-// async function getMovieCredits(movieId) {
-//   const url = `${API_URL}/movie/${movieId}/credits`;
-//   const filter = `?api_key=${API_KEY}&language=en-US`;
-//   const response = await fetch(`${url}${filter}`);
-//   const database = await response.json();
-
-//   return database;
-// }
-
-// async function getMovieReviews(movieId) {
-//   const url = `${API_URL}/movie/${movieId}/reviews`;
-//   const filter = `?api_key=${API_KEY}&language=en-US&page=1`;
-
-//   const response = await fetch(`${url}${filter}`);
-//   const database = await response.json();
-
-//   return database;
-// }
-
-// async function getMovieDetails(movieId) {
-//   const url = `${API_URL}/movie/${movieId}`;
-//   const filter = `?api_key=${API_KEY}&language=en-US`;
-
-//   const response = await fetch(`${url}${filter}`);
-//   const database = await response.json();
-
-//   return database;
-// }
+export const getSearch = async query => {
+  const { data } = await instance.get(
+    `search/movie/&query=${query}&include_adult=false`
+  );
+  return data;
+};
 
 // const Api = {
 //   getTrend,

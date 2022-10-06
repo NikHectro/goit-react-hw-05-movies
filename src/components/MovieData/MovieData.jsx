@@ -4,14 +4,14 @@ import { getMovieDetailes } from '../../services/api';
 
 const MovieData = () => {
   const { movieId } = useParams();
-  const [movieDesc, setmovieDesc] = useState(null);
+  const [movieDesc, setMovieDesc] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
     const fetchMovieData = async () => {
       try {
         const movieData = await getMovieDetailes(movieId);
-        setmovieDesc(movieData);
+        setMovieDesc(movieData);
       } catch (error) {
         console.log(error.message);
       }
@@ -32,7 +32,7 @@ const MovieData = () => {
       {movieDesc && (
         <div style={{ display: 'flex', margin: 16 }}>
           <img
-            width="300px"
+            width="340px"
             src={`https://image.tmdb.org/t/p/w500${movieDesc.poster_path}`}
             alt={movieDesc.original_title}
             style={{ marginRight: 16 }}
@@ -59,6 +59,7 @@ const MovieData = () => {
         <ul>
           <li>
             <Link to="cast" state={location.state}>
+              {/* {console.log('location.state: ', location.state)} */}
               Cast
             </Link>
           </li>
