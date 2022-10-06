@@ -4,8 +4,14 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/movies">Movie</NavLink>
+        <div style={{ margin: '16px 0px' }}>
+          <NavLink to="/" end>
+            <button type="button">Home</button>
+          </NavLink>
+          <NavLink to="/movies">
+            <button type="button">Movie</button>
+          </NavLink>
+        </div>
       </nav>
       <Outlet />
     </>

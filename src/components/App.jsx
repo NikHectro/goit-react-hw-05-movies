@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from '../pages/HomePage';
 import MoviesPage from '../pages/MoviesPage';
-import MovieData from '../pages/MovieData';
+import MovieData from './MovieData';
 
 export const App = () => {
   return (
