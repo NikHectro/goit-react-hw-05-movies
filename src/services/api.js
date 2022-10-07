@@ -33,9 +33,9 @@ export const getReviews = async movieId => {
 
 export const getSearch = async query => {
   const { data } = await instance.get(
-    `search/movie/&query=${query}&include_adult=false`
+    `search/movie?query=${query}&include_adult=false`
   );
-  return data;
+  return data.results;
 };
 
 // const Api = {

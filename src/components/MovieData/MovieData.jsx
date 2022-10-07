@@ -19,13 +19,14 @@ const MovieData = () => {
     fetchMovieData(movieId);
   }, [movieId]);
 
+  const backLinkHref = location.state?.backPage ?? '/';
+
   return (
     <div>
       <hr />
-      <Link to={location.state?.from ?? '/'}>
+      <Link to={backLinkHref}>
         <button type="button" style={{}}>
-          {' '}
-          Go back{' '}
+          Go back
         </button>
       </Link>
       {/* {loading && <Loader />} */}
