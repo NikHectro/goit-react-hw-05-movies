@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getReviews } from '../../services/api';
 
 const ReviewsData = () => {
@@ -25,7 +25,7 @@ const ReviewsData = () => {
     <div>
       <h5>REVIEWS</h5>
       <ul>
-        {movieReviews.length != 0 ? (
+        {movieReviews.length !== 0 ? (
           movieReviews.map(review => (
             <li key={review.id}>
               <h6>{review.author}</h6>

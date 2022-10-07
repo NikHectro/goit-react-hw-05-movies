@@ -16,13 +16,13 @@ const MoviesList = ({ movies, state }) => {
   );
 };
 
-// MoviesList.propTypes = {
-//   movies: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       title: PropTypes.string.isRequired,
-//       id: PropTypes.number.isRequired,
-//     })
-//   ),
-// };
+MoviesList.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ),
+};
 
 export default MoviesList;

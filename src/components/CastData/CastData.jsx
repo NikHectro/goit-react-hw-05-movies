@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getCast } from '../../services/api';
 import noImage from '../../services/Images/noImage2.jpg';
 
 const CastData = () => {
   const { movieId } = useParams();
   const [movieCast, setCast] = useState(null);
-  //   const location = useLocation();
 
   useEffect(() => {
     const fetchCast = async () => {
