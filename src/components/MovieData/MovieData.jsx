@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetailes } from '../../services/api';
 
@@ -71,7 +71,13 @@ const MovieData = () => {
           </li>
         </ul>
         <hr />
-        <Outlet />
+        <Suspense
+          fallback={
+            <h2>Please, wait a second more... minnions are working!</h2>
+          }
+        >
+          <Outlet />
+        </Suspense>
       </div>
     </div>
   );
