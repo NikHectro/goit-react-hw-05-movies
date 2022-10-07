@@ -34,7 +34,10 @@ const CastData = () => {
       >
         {movieCast &&
           movieCast.map(actor => (
-            <li style={{ border: '2px solid black', width: '170px' }}>
+            <li
+              key={actor.id}
+              style={{ border: '2px solid black', width: '170px' }}
+            >
               <img
                 src={
                   actor.profile_path

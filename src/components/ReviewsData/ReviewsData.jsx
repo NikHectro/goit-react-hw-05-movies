@@ -27,7 +27,7 @@ const ReviewsData = () => {
       <ul>
         {movieReviews.length != 0 ? (
           movieReviews.map(review => (
-            <li key={movieReviews.id}>
+            <li key={review.id}>
               <h6>{review.author}</h6>
               <p>{review.content}</p>
             </li>
