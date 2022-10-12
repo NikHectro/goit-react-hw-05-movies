@@ -6,6 +6,7 @@ import MoviesList from '../../components/MoviesList';
 const MoviesPage = () => {
   const location = useLocation();
   const [searchMovies, setSearchMovies] = useState([]);
+  const [notFound, setNotFound] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({});
   const queryParam = searchParams.get('query') ?? '';
 
@@ -14,6 +15,9 @@ const MoviesPage = () => {
       const fetchSearch = async () => {
         try {
           const searchData = await getSearch(queryParam);
+          if (!searchData.length) {
+            setNotFound(true);
+          }
           setSearchMovies(searchData);
         } catch (error) {
           console.log(error.message);
@@ -42,7 +46,7 @@ const MoviesPage = () => {
       {searchMovies.length && queryParam ? (
         <MoviesList movies={searchMovies} state={location} />
       ) : (
-        <p>Could not find "{queryParam}"</p>
+        notFound && <p>Could not find "{queryParam}"</p>
       )}
     </>
   );
