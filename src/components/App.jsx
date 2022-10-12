@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from '../pages/HomePage';
 // import MoviesPage from '../pages/MoviesPage';
-import MovieData from './MovieData';
+import MovieData from '../pages/MovieData';
 // import CastData from './CastData';
 // import ReviewsData from './ReviewsData';
 
@@ -23,7 +23,7 @@ export const App = () => {
             <Route path="reviews" element={<ReviewsData />} />
           </Route>
         </Route>
-        <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="*" element={<Layout />} />
       </Routes>
     </>
   );

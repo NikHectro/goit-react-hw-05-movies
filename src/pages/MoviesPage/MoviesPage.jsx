@@ -39,7 +39,11 @@ const MoviesPage = () => {
         <input type="text" name="query" autoFocus />
         <button type="submit">Search</button>
       </form>
-      {searchMovies && <MoviesList movies={searchMovies} state={location} />}
+      {searchMovies.length && queryParam ? (
+        <MoviesList movies={searchMovies} state={location} />
+      ) : (
+        <p>Could not find "{queryParam}"</p>
+      )}
     </>
   );
 };

@@ -29,7 +29,7 @@ const MovieData = () => {
           Go back
         </button>
       </Link>
-      {/* {loading && <Loader />} */}
+
       {movieDesc && (
         <div style={{ display: 'flex', margin: 16 }}>
           <img
